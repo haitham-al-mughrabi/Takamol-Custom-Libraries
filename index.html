@@ -8,15 +8,13 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- Header -->
-        <header class="header">
-            <h1>Takamol Automation Libraries Documentation</h1>
-        </header>
-
         <!-- Sidebar -->
         <nav id="sidebar" class="sidebar">
+            <div class="home-button-container">
+                <button class="home-btn" onclick="location.href='home.html'">Home</button>
+            </div>
             <div class="sidebar-header">
-                <h2>Documentation</h2>
+                <img src="logo.png" alt="Documentation Logo" class="sidebar-logo">
             </div>
             <ul class="sidebar-links">
                 <li><a href="docs/AlertIntegration.html" target="doc-viewer">Alert Integration</a></li>
@@ -45,14 +43,14 @@
 
         <!-- Main Content Area -->
         <main id="main-content">
-            <iframe id="doc-viewer" name="doc-viewer" src="docs/AlertIntegration.html" frameborder="0"></iframe>
             <button id="expand-btn" class="expand-btn">View Full Page</button>
+            <iframe id="doc-viewer" name="doc-viewer" src="docs/AlertIntegration.html" frameborder="0"></iframe>
         </main>
 
         <!-- Fullscreen Viewer -->
         <div id="fullscreenViewer" class="fullscreen-viewer">
             <button id="close-fullscreen" class="close-fullscreen">×</button>
-            <iframe id="fullscreenIframe" src="docs/AlertIntegration.html" frameborder="0"></iframe>
+            <iframe id="fullscreenIframe" src="" frameborder="0"></iframe>
         </div>
     </div>
 
@@ -66,18 +64,28 @@
 
         // Open Fullscreen Viewer
         function openFullscreen() {
-            fullscreenIframe.src = docViewer.src;
-            fullscreenViewer.style.display = 'block';
+            const currentDocSrc = docViewer.src; // Get the current document URL from doc-viewer iframe
+            fullscreenIframe.src = currentDocSrc; // Set the fullscreen iframe's src
+            fullscreenViewer.style.display = 'block'; // Show the fullscreen viewer
         }
 
         // Close Fullscreen Viewer
         function closeFullscreen() {
             fullscreenViewer.style.display = 'none';
+            fullscreenIframe.src = ''; // Clear the iframe to free up memory
         }
 
         // Event Listeners
         expandBtn.addEventListener('click', openFullscreen);
         closeFullscreenBtn.addEventListener('click', closeFullscreen);
+            // DOM Elements
+
+        // Check if a document is selected in sessionStorage
+        const selectedDocument = sessionStorage.getItem('selectedDocument');
+        if (selectedDocument) {
+            docViewer.src = selectedDocument; // Load the selected document in the iframe
+            sessionStorage.removeItem('selectedDocument'); // Clear the sessionStorage
+        }
     </script>
 </body>
 </html>
