@@ -9,38 +9,46 @@
 <body>
     <header>
         <h1>Robot Framework Documentation</h1>
-        <p>Explore comprehensive documentation for various utilities and libraries in Robot Framework.</p>
+        <p>Select a documentation file from the list to view it.</p>
     </header>
     <main>
-        <section>
-            <h2>Available Documentation</h2>
-            <div class="doc-grid">
-                <a href="docs/AlertIntegration.html" target="_blank">AlertIntegration</a>
-                <a href="docs/Assertions.html" target="_blank">Assertions</a>
-                <a href="docs/Base64.html" target="_blank">Base64</a>
-                <a href="docs/Cookies.html" target="_blank">Cookies</a>
-                <a href="docs/CustomDateTime.html" target="_blank">CustomDateTime</a>
-                <a href="docs/DataStructure.html" target="_blank">DataStructure</a>
-                <a href="docs/DynamicValues.html" target="_blank">DynamicValues</a>
-                <a href="docs/FileDirOperations.html" target="_blank">FileDirOperations</a>
-                <a href="docs/Generators.html" target="_blank">Generators</a>
-                <a href="docs/HtmlParser.html" target="_blank">HtmlParser</a>
-                <a href="docs/LocalStorage.html" target="_blank">LocalStorage</a>
-                <a href="docs/MailSac.html" target="_blank">MailSac</a>
-                <a href="docs/Math.html" target="_blank">Math</a>
-                <a href="docs/PageSupport.html" target="_blank">PageSupport</a>
-                <a href="docs/PhoneNumberLibrary.html" target="_blank">PhoneNumberLibrary</a>
-                <a href="docs/PyDate.html" target="_blank">PyDate</a>
-                <a href="docs/pyString.html" target="_blank">pyString</a>
-                <a href="docs/Random.html" target="_blank">Random</a>
-                <a href="docs/Secrets.html" target="_blank">Secrets</a>
-                <a href="docs/URLEncode.html" target="_blank">URLEncode</a>
-                <a href="docs/VariableIdentifier.html" target="_blank">VariableIdentifier</a>
+        <div class="container">
+            <!-- Sidebar for navigation -->
+            <nav class="sidebar">
+                <h2>Documentation Files</h2>
+                <ul>
+                    <li><a href="docs/AlertIntegration.html" target="doc-viewer">AlertIntegration</a></li>
+                    <li><a href="docs/Assertions.html" target="doc-viewer">Assertions</a></li>
+                    <li><a href="docs/Base64.html" target="doc-viewer">Base64</a></li>
+                    <li><a href="docs/Cookies.html" target="doc-viewer">Cookies</a></li>
+                    <li><a href="docs/CustomDateTime.html" target="doc-viewer">CustomDateTime</a></li>
+                    <li><a href="docs/DataStructure.html" target="doc-viewer">DataStructure</a></li>
+                    <li><a href="docs/DynamicValues.html" target="doc-viewer">DynamicValues</a></li>
+                    <li><a href="docs/FileDirOperations.html" target="doc-viewer">FileDirOperations</a></li>
+                    <li><a href="docs/Generators.html" target="doc-viewer">Generators</a></li>
+                    <li><a href="docs/HtmlParser.html" target="doc-viewer">HtmlParser</a></li>
+                    <li><a href="docs/LocalStorage.html" target="doc-viewer">LocalStorage</a></li>
+                    <li><a href="docs/MailSac.html" target="doc-viewer">MailSac</a></li>
+                    <li><a href="docs/Math.html" target="doc-viewer">Math</a></li>
+                    <li><a href="docs/PageSupport.html" target="doc-viewer">PageSupport</a></li>
+                    <li><a href="docs/PhoneNumberLibrary.html" target="doc-viewer">PhoneNumberLibrary</a></li>
+                    <li><a href="docs/PyDate.html" target="doc-viewer">PyDate</a></li>
+                    <li><a href="docs/pyString.html" target="doc-viewer">pyString</a></li>
+                    <li><a href="docs/Random.html" target="doc-viewer">Random</a></li>
+                    <li><a href="docs/Secrets.html" target="doc-viewer">Secrets</a></li>
+                    <li><a href="docs/URLEncode.html" target="doc-viewer">URLEncode</a></li>
+                    <li><a href="docs/VariableIdentifier.html" target="doc-viewer">VariableIdentifier</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main content area with iframe -->
+            <div class="viewer">
+                <iframe name="doc-viewer" src="docs/AlertIntegration.html" frameborder="0"></iframe>
             </div>
-        </section>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Robot Framework Docs. Designed with care. Powered by <a href="https://robotframework.org" target="_blank">Robot Framework</a>.</p>
+        <p>&copy; 2024 Robot Framework Docs. Powered by <a href="https://robotframework.org" target="_blank">Robot Framework</a>.</p>
     </footer>
 </body>
 </html>
