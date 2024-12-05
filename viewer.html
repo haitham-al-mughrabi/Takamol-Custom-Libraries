@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents - Takamol Automation Libraries</title>
+    <link rel="stylesheet" href="styles/viewer.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="home-button-container">
+                <button class="home-btn" onclick="location.href='index.html'">Home</button>
+            </div>
+            <div class="sidebar-header">
+                <img src="resource/logo.png" alt="Documentation Logo" class="sidebar-logo">
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="docs/AlertIntegration.html" data-src="docs/AlertIntegration.html">Alert Integration</a></li>
+                <li><a href="docs/Assertions.html" data-src="docs/Assertions.html">Assertions</a></li>
+                <li><a href="docs/Base64.html" data-src="docs/Base64.html">Base64</a></li>
+                <li><a href="docs/Cookies.html" data-src="docs/Cookies.html">Cookies</a></li>
+                <li><a href="docs/CustomDateTime.html" data-src="docs/CustomDateTime.html">Custom DateTime</a></li>
+                <li><a href="docs/DataStructure.html" data-src="docs/DataStructure.html">Data Structure</a></li>
+                <li><a href="docs/DynamicValues.html" data-src="docs/DynamicValues.html">Dynamic Values</a></li>
+                <li><a href="docs/FileDirOperations.html" data-src="docs/FileDirOperations.html">File and Directory Operations</a></li>
+                <li><a href="docs/Generators.html" data-src="docs/Generators.html">Generators</a></li>
+                <li><a href="docs/HtmlParser.html" data-src="docs/HtmlParser.html">HTML Parser</a></li>
+                <li><a href="docs/LocalStorage.html" data-src="docs/LocalStorage.html">Local Storage</a></li>
+                <li><a href="docs/MailSac.html" data-src="docs/MailSac.html">MailSac</a></li>
+                <li><a href="docs/Math.html" data-src="docs/Math.html">Math</a></li>
+                <li><a href="docs/PageSupport.html" data-src="docs/PageSupport.html">Page Support</a></li>
+                <li><a href="docs/PhoneNumberLibrary.html" data-src="docs/PhoneNumberLibrary.html">Phone Number Library</a></li>
+                <li><a href="docs/PyDate.html" data-src="docs/PyDate.html">PyDate</a></li>
+                <li><a href="docs/pyString.html" data-src="docs/pyString.html">PyString</a></li>
+                <li><a href="docs/Random.html" data-src="docs/Random.html">Random</a></li>
+                <li><a href="docs/Secrets.html" data-src="docs/Secrets.html">Secrets</a></li>
+                <li><a href="docs/URLEncode.html" data-src="docs/URLEncode.html">URL Encode</a></li>
+                <li><a href="docs/VariableIdentifier.html" data-src="docs/VariableIdentifier.html">Variable Identifier</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content">
+            <button id="expand-btn" class="expand-btn">View Full Page</button>
+            <iframe id="doc-viewer" name="doc-viewer" src="docs/AlertIntegration.html" frameborder="0"></iframe>
+        </main>
+
+        <!-- Fullscreen Viewer -->
+        <div id="fullscreenViewer" class="fullscreen-viewer">
+            <button id="close-fullscreen" class="close-fullscreen">×</button>
+            <iframe id="fullscreenIframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const expandBtn = document.getElementById('expand-btn');
+        const fullscreenViewer = document.getElementById('fullscreenViewer');
+        const closeFullscreenBtn = document.getElementById('close-fullscreen');
+        const docViewer = document.getElementById('doc-viewer');
+        const fullscreenIframe = document.getElementById('fullscreenIframe');
+        const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+
+        // Open Fullscreen Viewer
+        function openFullscreen() {
+            const currentDocSrc = docViewer.src; // Get the current document URL from doc-viewer iframe
+            fullscreenIframe.src = currentDocSrc; // Set the fullscreen iframe's src
+            fullscreenViewer.style.display = 'block'; // Show the fullscreen viewer
+        }
+
+        // Close Fullscreen Viewer
+        function closeFullscreen() {
+            fullscreenViewer.style.display = 'none';
+            fullscreenIframe.src = ''; // Clear the iframe to free up memory
+        }
+
+        // Save Selected Document to SessionStorage and Open Fullscreen
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default navigation
+                const selectedDoc = link.getAttribute('data-src');
+                sessionStorage.setItem('selectedDocument', selectedDoc); // Save to sessionStorage
+                docViewer.src = selectedDoc; // Update the iframe source
+            });
+        });
+
+        // Event Listeners
+        expandBtn.addEventListener('click', openFullscreen);
+        closeFullscreenBtn.addEventListener('click', closeFullscreen);
+
+        // Load Selected Document from SessionStorage
+        const selectedDocument = sessionStorage.getItem('selectedDocument');
+        if (selectedDocument) {
+            docViewer.src = selectedDocument; // Load the selected document in the iframe
+            sessionStorage.removeItem('selectedDocument'); // Clear the sessionStorage
+        }
+    </script>
+</body>
+</html>
