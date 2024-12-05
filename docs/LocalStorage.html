@@ -10,10 +10,10 @@
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
-    --background-color: white;
+    --background-color: #242476;
     --text-color: black;
-    --border-color: #e0e0e2;
-    --light-background-color: #f3f3f3;
+    --border-color: #9b9bcb;
+    --light-background-color: #9b9bcb;
     --robot-highlight: #00c0b5;
     --highlighted-color: var(--text-color);
     --highlighted-background-color: yellow;
@@ -21,10 +21,10 @@
     --link-color: #0000ee;
 }
 [data-theme="dark"] {
-    --background-color: #1c2227;
+    --background-color: #242476;
     --text-color: #e2e1d7;
-    --border-color: #4e4e4e;
-    --light-background-color: #002b36;
+    --border-color: #9b9bcb;
+    --light-background-color: #9b9bcb;
     --robot-highlight: yellow;
     --highlighted-color: var(--background-color);
     --highlighted-background-color: yellow;
@@ -53,10 +53,12 @@ a {
     display: flex;
     flex-direction: column;
     background: white;
-    background: var(--background-color);
-    position: -webkit-sticky; /* Safari */
+    background: #5353a5;
+    position: -webkit-sticky;
+    /* Safari */
     position: sticky;
     top: 0;
+    width: 400px;
 }
 .libdoc-overview h4 {
     margin-bottom: 0.5rem;
@@ -88,6 +90,7 @@ a {
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-right: 10px;
 }
 .libdoc-details {
     margin-top: 60px;
@@ -134,7 +137,7 @@ span.hamburger-menu
   margin-bottom: 5px;
   position: fixed;
   right: 20px;
-  background: black;
+  background: #5353a5;
   background: var(--text-color);
   border-radius: 2px;
   z-index: 1;
@@ -1633,7 +1636,7 @@ libdoc = {"specversion": 3, "name": "LocalStorage", "doc": "<p>Documentation for
       <div class="keywords-overview-header-row">
       <h4>Keywords (<span id="keyword-statistics-header"></span>)
       </h4>
-      <button id="toggle-keyword-shortcuts" onclick="toggleShortcuts()">+</button>
+      
       </div>
       <ul class="shortcuts" id="keyword-shortcuts-container">
       </ul>
